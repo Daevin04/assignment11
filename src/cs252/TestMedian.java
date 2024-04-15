@@ -21,15 +21,21 @@ public class TestMedian {
     private static boolean test(int numTests) {
         double[] inputs = { 1.0, 4.0, 6.5, 2.4, 24.0, 5.0 };
         double[] expected = { 1.0, 2.5, 4.0, 3.2, 4.0, 4.5 };
+        final double EPSILON = 0.0001; // Tolerance for floating-point comparison
 
         for (int i = 0; i < numTests; ++i) {
             if (i >= inputs.length) return false; // Prevent out-of-bounds access
-            double[] trimmedInputs = Arrays.copyOf(inputs, i+1);
+            double[] trimmedInputs = Arrays.copyOf(inputs, i + 1);
             Median med = new Median(trimmedInputs);
             double avg = med.median();
-            if (avg != expected[i])
+            if (!isCloseEnough(avg, expected[i], EPSILON))
                 return false;
         }
         return true;
+    }
+
+    // Helper method to compare two doubles with a tolerance
+    private static boolean isCloseEnough(double a, double b, double epsilon) {
+        return Math.abs(a - b) < epsilon;
     }
 }
