@@ -1,4 +1,3 @@
-TestMedian.java                                                                                                                                                      
 package cs252;
 
 import java.util.Arrays;
