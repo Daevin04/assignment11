@@ -24,11 +24,18 @@ public class TestMedian {
         final double EPSILON = 0.0001; // Tolerance for floating-point comparison
 
         for (int i = 0; i < numTests; ++i) {
+<<<<<<< HEAD
             if (i >= inputs.length) return false; // Prevent out-of-bounds access
             double[] trimmedInputs = Arrays.copyOf(inputs, i + 1);
             Median med = new Median(trimmedInputs);
             double avg = med.median();
             if (!isCloseEnough(avg, expected[i], EPSILON))
+=======
+            double[] trimmedInputs = Arrays.copyOf(inputs, i+1);
+            Median med = new Median(trimmedInputs);
+            double avg = med.Median();
+            if (avg != expected[i])
+>>>>>>> 5867ef6 (edits)
                 return false;
         }
         return true;
