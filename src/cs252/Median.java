@@ -22,13 +22,15 @@ public class Median {
      * @return the median average
      */
     double median() {
-        double[] sorted = Arrays.copyOf(values, values.length); // More efficient array copy
-        Arrays.sort(sorted); // Corrected the spelling here
+        double[] sorted = new double[values.length];
+        for (int i = 0; i < values.length; ++i){
+            sorted[i] = values[i];
+        }
+        Arrays.sort(sorted);
         int middle = values.length / 2;
-        if (values.length % 2 == 0) {
-            // Corrected to access the correct middle elements
-            return 0.5 * (sorted[middle - 1] + sorted[middle]);
-        } else {
+        if (values.length % 2 == 0){
+            return 0.5 * (sorted[middle] + sorted[middle+1]);
+        } else{
             return sorted[middle];
         }
     }

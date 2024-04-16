@@ -24,7 +24,7 @@ public class TestMedian {
 
         for (int i = 0; i < numTests; ++i) {
             double[] trimmedInputs = Arrays.copyOf(inputs, i+1);
-            Median med = new Median(trimmedInputs)
+            Median med = new Median(trimmedInputs);
             double avg = med.median();
             if (avg != expected[i])
                 return false;
