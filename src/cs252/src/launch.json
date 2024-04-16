@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "TestMedian",
+            "request": "launch",
+            "mainClass": "cs252.TestMedian",
+            "projectName": "",
+            "args": ["5"]  // Command-line argument added here
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}
